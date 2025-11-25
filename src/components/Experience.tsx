@@ -181,7 +181,7 @@ export default function Experience() {
                           <div className="text-gray-700 leading-relaxed bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
                             {typeof achievement === 'string' ? achievement : achievement}
                             {/* Animated demo for Federated Help Center Search achievement */}
-                            {exp.company === 'HALEON' && idx === 1 && (
+                            {exp.company === 'HALEON' && idx === 2 && (
                               <FederatedSearchDemo />
                             )}
                           </div>
