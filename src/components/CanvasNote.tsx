@@ -20,7 +20,7 @@ export default function CanvasNote() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <Image 
-                    src="/canvasnote.png" 
+                    src="/portfolio/canvasnote.png" 
                     alt="CanvasNote Logo" 
                     width={48} 
                     height={48}
