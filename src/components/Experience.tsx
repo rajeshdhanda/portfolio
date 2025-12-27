@@ -33,9 +33,23 @@ export default function Experience() {
       location: "Bengaluru, India",
       description: <>Productionizing DS Services, Infrastructure, and Pipelines on <strong>Azure</strong> and <strong>Databricks</strong> for scalable and reliable deployment.</>,
       achievements: [
-        <><span className="font-bold text-blue-600">Haleon GenAI Assistant</span>: Architected and developed an enterprise-grade, multi-team <strong>GenAI platform</strong> integrating <strong>FastAPI</strong>, <strong>React</strong>, <strong>Azure OpenAI</strong> (GPT-4), and Azure Cloud Services to enable secure, intelligent data access across Finance, Procurement, and Help Center from scratch. Built team-specific AI agents and modular tool frameworks using <strong>LangChain</strong> and <strong>Azure Cognitive Search</strong> for contextual data retrieval. Implemented <strong>MCP</strong> client–server deployments for distributed tool orchestration across databases and AI services. Engineered structure-aware document pipelines with <strong>Azure Document Intelligence</strong>, and optimized chat architecture for sub-second latency through asynchronous processing, containerized deployment, and scalable microservice design.</>,
+        <><span className="font-bold text-blue-600">Haleon GenAI Assistant</span>: Architected and developed an enterprise-grade, multi-team <strong>GenAI platform</strong> integrating <strong>FastAPI</strong>, <strong>React</strong>, <strong>Azure OpenAI</strong> and Azure Cloud Services to enable secure, intelligent data access across Finance, Procurement, and Help Center from scratch.
+        <ul className="mt-3 ml-6 space-y-2 list-disc text-gray-700">
+          <li>Built team-specific AI agents and modular tool frameworks using <strong>LangChain</strong> and <strong>LangGraph</strong> for contextual data retrieval.</li>
+          <li>Enhanced retrieval quality through <strong>semantic ranker</strong> with multilingual support and <strong>hybrid search</strong> using text and vector search in <strong>Azure AI Search</strong>.</li>
+          <li>Engineered a scalable, structure-aware document processing pipeline using <strong>Azure AI Document Intelligence</strong> with automated <strong>GitHub Actions</strong> workflows, extracting structured layouts and entities, performing chunking, ingesting and managing documents in <strong>Azure Blob Storage</strong>, and updating vector and keyword indexes in <strong>Azure AI Search</strong> for real-time, high-relevance retrieval and RAG-ready content delivery.</li>
+          <li>Experimented with <strong>MCP</strong> (Model Context Protocol) client–server architecture for distributed tool orchestration across databases and AI services.</li>
+          <li>Optimized chat architecture for sub-second latency through asynchronous processing, containerized deployment, and scalable microservice design.</li>
+        </ul>
+        </>,
         <><span className="font-bold text-blue-600">Prometheus</span>: Implemented end-to-end MLOps framework using <strong>Databricks Bundles</strong>, <strong>Unity Catalog</strong>, and <strong>GitHub Actions</strong>. Built robust CI/CD workflows with linting, bundle validation, pre and post <strong>semantic versioning</strong>, and automated Databricks job orchestration across Dev/UAT/Prod. Enabled dynamic, market and brand specific task generation at <strong>runtime</strong>, versioned model and data persistence in Unity Catalog, reproducible deployments via explicit <strong>semantic release tags</strong>, with outputs seamlessly refreshed in Power BI for stakeholders.</>,
-        <><span className="font-bold text-blue-600">Federated Help Center Search</span>: Architected and delivered a federated search solution across 15+ brand help center URLs, providing robust <strong>search</strong>, <strong>autocomplete</strong>, and <strong>suggestion</strong> APIs directly to the frontend team for seamless integration. Currently performing large-scale web crawling from 500+ brand websites (including help centers) across multiple countries, markets, domains, and languages. Automated scraping, ingestion, indexing, and deployment using <strong>Azure Blob Storage</strong>, <strong>Azure AI Search</strong>, and <strong>GitHub Actions</strong> for real-time updates. Focusing on <strong>Agentic AI</strong> for advanced data extraction and enrichment. Built a POC for <strong>generative</strong> search using <strong>Azure OpenAI</strong>, leveraging results from Azure AI Search APIs.</>,
+        <><span className="font-bold text-blue-600">Federated Help Center Search</span>: Architected and delivered a federated search solution across 15+ brand help center URLs, providing search results from multiple brand websites and help centers across different markets, languages, and brands.
+        <ul className="mt-3 ml-6 space-y-2 list-disc text-gray-700">
+          <li>Large-scale web crawling from 500+ brand websites (including help centers) across multiple countries, markets, domains, and languages. Automated scraping using <strong>Scrapy</strong>, structure-aware information extraction from leaflets using <strong>Azure AI Document Intelligence</strong>, data ingestion to <strong>Azure Blob Storage</strong>, and updating vector and keyword indexes in <strong>Azure AI Search</strong> for real-time, high-relevance retrieval and RAG-ready content delivery.</li>
+          <li>Providing robust <strong>search</strong>, <strong>autocomplete</strong>, and <strong>suggestion</strong> APIs from <strong>Azure AI Search</strong> directly to the frontend team for seamless integration.</li>
+          <li>For internal testing using GenAI assistant: Added <strong>Playground mode</strong> with custom model selection, temperature control, and system prompt configuration, including full prompt visibility alongside search results for enhanced experimentation and debugging.</li>
+        </ul>
+        </>,
         <><span className="font-bold text-blue-600">Procurement Contract Analysis</span>: Led ML-Ops for a RAG-based (<strong>Agentic-RAG</strong>) system by productionizing modular workflows with <strong>Databricks Asset Bundles</strong>, integrating <strong>Azure Document Intelligence</strong>, Unity Catalog, and model serving endpoints along with automated deployment of <strong>Databricks App</strong>. Built CI/CD pipelines with GitHub Actions for automated, rollback-ready workflows, deployments, and <strong>GitOps</strong>-based orchestration.</>,
         <><span className="font-bold text-blue-600">Asset Vision</span>: Designed, implemented a robust CI/CD pipeline with <strong>GitHub Actions</strong> to build and publish Docker images to GitHub Container Registry (<strong>GHCR</strong>) and Azure Container Registry (<strong>ACR</strong>), enabling automated deployment to <strong>Azure Web App</strong> and microservices on <strong>Kubernetes</strong> cluster for scalable, secure and reliable application management across environments. Applied same approach to streamline deployments in other <strong>RAG</strong> based project.</>,
         <><span className="font-bold text-blue-600">MLOps Template for Databricks</span>: Improved and implemented a comprehensive MLOps template for <strong>Databricks</strong> leveraging <strong>GitHub Actions</strong> to automate CI/CD pipelines, including code linting, testing, environment setup, and seamless deployment of <strong>Spark</strong> jobs, such as model training, validation, and deployment, resulting in significantly enhanced workflow efficiency and reduced deployment times.</>    
@@ -61,7 +75,7 @@ export default function Experience() {
         <><span className="font-bold text-blue-600">Customer Interaction Analytics</span>: Designed and implemented a cloud-based workflow for end-to-end processing of customer interactions data. The workflow encompasses data ingestion from Snowflake, audio download, transcription generation, information extraction, and automated customer summary generation. This system is orchestrated through <strong>Airflow</strong> and leverages Google Cloud Functions, Cloud Storage, <strong>Kserve InferenceService</strong>, <strong>Triton</strong>, <strong>MongoDB</strong> and <strong>EdgeDB</strong>.</>,
         <><span className="font-bold text-blue-600">Data Platform R&D</span>: Experimenting with deploying <strong>Doris</strong>, <strong>StarRocks</strong>, and associated open-source tools on <strong>GKE</strong> to construct a scalable and high-performance data platform, incorporating <strong>S3</strong>-compatible object storage via <strong>MINIO/GCS</strong>, implementing access control and data retention policies, and ensuring effective <strong>Kubernetes</strong> cluster monitoring and alerting through <strong>Grafana&apos;s</strong> dashboards utilizing <strong>Prometheus</strong> as a primary time-series data source.</>,
         <><span className="font-bold text-blue-600">Audio Embeddings Search</span>: Experimented <a href="https://drive.google.com/file/d/19KvVtSsnsxLBpRJoE9-SFJGd9gzmTkkN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="font-semibold text-purple-600 hover:text-purple-800 underline">Minio and Milvus</a> integration to extract audio embeddings from Minio, enabling efficient search for similar content, Redis for metadata storage.</>,
-        <>Commended and highly appreciated by the COO and VP (DS and BI) for exemplary performance and remarkable contributions.</>
+        
       ],
       technologies: ["GCP", "GKE", "Kserve", "Triton Inference Server", "PostgreSQL", "Airflow", "VertexAI", "EdgeDB", "FastAPI", "Feast", "Redis", "BigQuery", "Cloud Build", "Pub/Sub", "Snowflake", "MongoDB", "Doris", "StarRocks", "MINIO", "Milvus", "Grafana", "Prometheus"],
       blogs: [
@@ -189,6 +203,108 @@ export default function Experience() {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Awards & Recognition — CARS24 */}
+                  {exp.company === 'CARS24' && (
+                    <div className="mb-8">
+                      <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span className="text-2xl mr-3">🏆</span>
+                        Awards & Recognition
+                      </h4>
+                      <ul className="space-y-4">
+                        {/* Rookie Award – Appreciation Certificate (Q3 2022) */}
+                        <li className="group">
+                          <div className="text-gray-700 leading-relaxed bg-gray-50/90 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="font-bold text-blue-700 mr-2">Rookie Award – Appreciation Certificate</h5>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 border border-blue-300">Special Recognition</span>
+                              <span className="ml-auto text-sm text-gray-700">Q3 2022</span>
+                            </div>
+                            <p>
+                              This certificate is proudly awarded to Rajesh Dhanda (ML Engg – Global) for outstanding performance in Quarter 3, 2022.
+                            </p>
+                            <div className="mt-3 text-sm text-gray-600">
+                              <span className="font-semibold">Signatories:</span> VP – DS and BI, COO
+                            </div>
+                            {/* Optional certificate preview if hosted in public assets */}
+                            {/* <div className="mt-4">
+                              <img src="/certificates/cars24-rookie-award.jpg" alt="CARS24 Rookie Award Certificate" className="w-full rounded-lg border" />
+                            </div> */}
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Awards & Recognition Section - separated cards like Achievements, themed to API demo colors */}
+                  {exp.company === 'HALEON' && (
+                    <div className="mb-8">
+                      <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span className="text-2xl mr-3">🏆</span>
+                        Awards & Recognition
+                      </h4>
+                      <ul className="space-y-4">
+                        {/* Global Employee Recognition (Bronze) - Dec 2025 */}
+                        <li className="group">
+                          <div className="text-gray-700 leading-relaxed bg-gray-50/90 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="font-bold text-blue-700 mr-2">Global Employee Recognition</h5>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 border border-blue-300">Bronze</span>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 border border-purple-300">Unlock Value at Pace</span>
+                              <span className="ml-auto text-sm text-gray-700">Dec 2025</span>
+                            </div>
+                            <p>
+                              Rajesh has 1168 GitHub contributions this year, which is impeccable. He led MLE efforts and delivered successful deployments for Help Centre Federated Search, Prometheus, and Contract Analyzer projects. He presented the Contract Analyzer project on AI Day, receiving significant recognition across the Data Office and CDO.
+                            </p>
+                          </div>
+                        </li>
+
+                        {/* Global Employee Recognition (Bronze) - Nov 2024 */}
+                        <li className="group">
+                          <div className="text-gray-700 leading-relaxed bg-gray-50/90 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="font-bold text-blue-700 mr-2">Global Employee Recognition</h5>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 border border-blue-300">Bronze</span>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 border border-purple-300">Go Beyond</span>
+                              <span className="ml-auto text-sm text-gray-700">Nov 2024</span>
+                            </div>
+                            <p>
+                              Outstanding ML Engineer with major contributions to GenAI initiatives including Help Centre Federated Search and RAG-based chatbots using Azure and Databricks. Significant impact on MLOps through Prometheus and MLOps template contributions. Recognized as a strong team player, actively supporting deployments and leading discussions across MLOps forums.
+                            </p>
+                          </div>
+                        </li>
+
+                        {/* Global Employee Recognition - Collaborate for Impact (Sep 2025) */}
+                        <li className="group">
+                          <div className="text-gray-700 leading-relaxed bg-gray-50/90 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="font-bold text-blue-700 mr-2">Global Employee Recognition</h5>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 border border-purple-300">Collaborate for Impact</span>
+                              <span className="ml-auto text-sm text-gray-700">Sep 2025</span>
+                            </div>
+                            <p>
+                              Exceptional contribution and energy during Career Day and Technovation Day. Presented Contract Analyzer and Help Centre Federated Search projects, receiving widespread appreciation across the Data Office and CDO.
+                            </p>
+                          </div>
+                        </li>
+
+                        {/* 2025 Excellence Award – India Capability Centre (Dec 2025) */}
+                        <li className="group">
+                          <div className="text-gray-700 leading-relaxed bg-gray-50/90 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="font-bold text-blue-700 mr-2">2025 Excellence Award – India Capability Centre</h5>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 border border-green-300">Simplify for Impact</span>
+                              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 border border-purple-300">Win as One</span>
+                              <span className="ml-auto text-sm text-gray-700">Dec 2025</span>
+                            </div>
+                            <p>
+                              Helped bring Haleon’s “Win as One” strategy to life. 2025 Excellence Award – India Capability Centre for Build Contract AI – A synergy of Procurement Analytics and Data Office, revolutionising contract intelligence and management using Agentic-RAG.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                   
                   <div className="mb-8">
                     <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center">

@@ -36,6 +36,9 @@ export default function Navbar() {
               <Link href="/#projects" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
                 Projects
               </Link>
+              <Link href="/#canvasnote" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
+                CanvasNote
+              </Link>
               <Link href="/#education" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
                 Education
               </Link>
@@ -88,6 +91,9 @@ export default function Navbar() {
             </Link>
             <Link href="/#projects" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
               Projects
+            </Link>
+            <Link href="/#canvasnote" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
+              CanvasNote
             </Link>
             <Link href="/#education" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
               Education
