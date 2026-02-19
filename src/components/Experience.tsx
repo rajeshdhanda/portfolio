@@ -455,7 +455,7 @@ export default function Experience() {
             </div>
             <div className="group hover:shadow-lg transition-shadow duration-300">
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-200">
-                <h3 className="text-4xl font-bold text-orange-600 mb-3">10+</h3>
+                <h3 className="text-4xl font-bold text-orange-600 mb-3">5+</h3>
                 <p className="text-gray-700 font-semibold">Team Members Led</p>
                 <div className="w-16 h-1 bg-orange-400 mx-auto mt-3 rounded-full"></div>
               </div>
