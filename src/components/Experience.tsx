@@ -3,9 +3,9 @@
 import FederatedSearchDemo from './FederatedSearchDemo'
 
 export default function Experience() {
-  // Calculate experience from March 1, 2021 to current date
+  // Calculate experience from Jan 1, 2021 to current date
   const getExperience = () => {
-    const startDate = new Date('2021-03-01')
+    const startDate = new Date('2021-01-01')
     const currentDate = new Date()
     
     // Calculate total days
