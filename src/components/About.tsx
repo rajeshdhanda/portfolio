@@ -11,7 +11,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           <div className="space-y-6 lg:col-span-3">
             <p className="text-lg text-gray-600 leading-relaxed">
-              With 4+ years of experience in ML/DL model deployment, RESTful APIs, Docker, Kubernetes, and cloud platforms (Azure, GCP, Databricks), I am a proactive and results-driven machine learning engineer passionate about building highly scalable and resilient ML infrastructure. My expertise lies in CI/CD automation, container orchestration, Infrastructure as Code, and developing low-latency, high-performance inference systems to enable data scientists with seamless deployments and robust, production-grade workflows.
+              With 5 years of experience in ML/DL model deployment, RESTful APIs, Docker, Kubernetes, and cloud platforms (Azure, GCP, Databricks), I am a proactive and results-driven machine learning engineer passionate about building highly scalable and resilient ML infrastructure. My expertise lies in CI/CD automation, container orchestration, Infrastructure as Code, and developing low-latency, high-performance inference systems to enable data scientists with seamless deployments and robust, production-grade workflows.
             </p>
           </div>
           
