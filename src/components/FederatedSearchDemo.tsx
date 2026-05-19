@@ -285,6 +285,18 @@ function GoogleLikeSearchDemo() {
     return searchResults[fullQuery as keyof typeof searchResults] || [];
   };
 
+  const getAiOverview = () => {
+    const fullQuery = searchQueries[queryIndex];
+    const overviews: Record<string, string> = {
+      medic: 'For medical coverage questions, the fastest path is to confirm your plan type first (Medicare, Medicaid, or private coverage), then review eligibility and enrollment timelines. If your issue is payment-related, use the claims and reimbursement guide to verify required documents, submission steps, and expected processing windows before escalating to support.',
+      ship: 'Shipping support usually depends on your order stage. Start with live tracking for current status, then check delivery windows and carrier updates for delays. For international shipments, review customs requirements, restricted items, and destination rules, since these often add processing time that is not visible in basic order tracking.',
+      refund: 'Refund outcomes typically depend on return eligibility, item condition, and original payment method. Confirm policy coverage and return window first, submit a refund request with the required order details, and track status updates after approval. Processing time can vary by bank or card network even after the refund is marked complete.',
+      pass: 'If you are locked out, begin with password reset and account recovery verification steps, then update security settings like two-factor authentication to prevent repeat issues. For document-related queries such as passport support, use the dedicated service pages because requirements, turnaround times, and accepted proof documents differ by request type.',
+      order: 'Order support is most effective when handled in sequence: check real-time order status, review shipment milestones, then use cancellation or modification options if the order has not yet moved to dispatch. For completed purchases, use order history for invoices, receipts, and repeat purchases, and refer to return/refund guidance when post-delivery issues arise.'
+    };
+    return overviews[fullQuery] || 'AI generated answer is currently unavailable for this query.';
+  };
+
   return (
     <div ref={demoRef} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 w-full border shadow-sm">
       {/* Only show demo content if visible */}
@@ -366,6 +378,23 @@ function GoogleLikeSearchDemo() {
       {/* Search Results */}
       {searchPhase === 'results' && getSearchResults().length > 0 && (
         <div className="space-y-4 animate-fadeIn">
+          <div className="bg-white p-5 rounded-xl border border-blue-100 shadow-sm">
+            <div className="text-xs font-semibold text-blue-600 mb-2">AI Overview</div>
+            <p className="text-sm text-gray-700 leading-relaxed">{getAiOverview()}</p>
+            <div className="mt-3 flex items-center gap-3 text-gray-500">
+              <button type="button" aria-label="Thumbs up" className="hover:text-green-600 transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10V5a3 3 0 00-3-3l-1 5-3 3v10h11.28a2 2 0 001.97-1.66l1.2-7A2 2 0 0019.48 9H14zM7 10H4a1 1 0 00-1 1v8a1 1 0 001 1h3" />
+                </svg>
+              </button>
+              <button type="button" aria-label="Thumbs down" className="hover:text-red-600 transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14v5a3 3 0 003 3l1-5 3-3V4H5.72a2 2 0 00-1.97 1.66l-1.2 7A2 2 0 004.52 15H10zM17 14h3a1 1 0 001-1V5a1 1 0 00-1-1h-3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
           <div className="text-xs text-gray-500 mb-4 flex items-center">
             <svg className="w-4 h-4 text-green-500 mr-2 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
@@ -391,7 +420,7 @@ function GoogleLikeSearchDemo() {
       ) : (
         /* Show static placeholder when not visible */
         <div className="text-center py-8">
-          <div className="text-gray-500 text-sm">Federated Search Demo</div>
+          <div className="text-gray-500 text-sm">Global Consumer Help Center Demo</div>
           <div className="text-gray-400 text-xs mt-2">Scroll into view to see animation</div>
         </div>
       )}
@@ -404,10 +433,10 @@ export default function FederatedSearchDemo() {
     <div className="mt-6">
       <div className="mb-4 flex items-center">
         <span className="animate-pulse mr-2"></span>
-        <span className="font-bold text-blue-600">Federated Search API Demo</span>
+        <span className="font-bold text-blue-600">Global Consumer Help Center API Demo</span>
       </div>
       <p className="text-gray-600 text-sm mb-4">
-        Interactive demo of <strong className="text-blue-600">Autocomplete</strong>, <strong className="text-emerald-600">Suggestions</strong>, and <strong className="text-purple-600">Search APIs </strong> 
+        Interactive demo of <strong className="text-blue-600">Autocomplete</strong>, <strong className="text-emerald-600">Suggestions</strong>, <strong className="text-purple-600">Search APIs</strong>, and <strong className="text-indigo-600">AI generated overview</strong>{' '}
         Integrated across <strong className="text-indigo-600">15+ help centers</strong> providing results from <strong className="text-orange-600">brand websites</strong>
       </p>
       <GoogleLikeSearchDemo />
