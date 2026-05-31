@@ -1,0 +1,889 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0D0F;
+    --bg2: #131417;
+    --bg3: #1A1C20;
+    --border: rgba(255,255,255,0.07);
+    --border-hover: rgba(255,255,255,0.14);
+    --text: #F0EDE8;
+    --muted: #888580;
+    --accent: #C8A96E;
+    --accent2: #5DB8A0;
+    --tag-bg: rgba(200,169,110,0.1);
+    --tag-border: rgba(200,169,110,0.25);
+    --tag-text: #C8A96E;
+    --green-bg: rgba(93,184,160,0.1);
+    --green-border: rgba(93,184,160,0.2);
+    --green-text: #5DB8A0;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  .port {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    width: 100%;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    border-bottom: 0.5px solid var(--border);
+    background: rgba(12,13,15,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: transparent;
+    border: 0.5px solid var(--border-hover);
+    color: var(--text) !important;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s !important;
+  }
+  .nav-cta:hover { border-color: var(--accent) !important; background: rgba(200,169,110,0.06) !important; }
+
+  /* HERO */
+  .hero {
+    padding: 72px 32px 64px;
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 40px;
+    align-items: start;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: 52px;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-title {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+  }
+  .hero-bio {
+    font-size: 14px;
+    color: #9A9690;
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #1a1400;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 0.5px solid var(--border-hover);
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-secondary:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 1.5px solid var(--border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--accent);
+    margin-top: 8px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  .cloud-logos {
+    display: flex;
+    gap: 20px;
+    margin-top: 32px;
+    align-items: center;
+    padding-top: 28px;
+    border-top: 0.5px solid var(--border);
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .cloud-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: 4px;
+  }
+  .cloud-chip {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-top: 56px;
+  }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-line {
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* EXPERIENCE CARDS */
+  .exp-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+  .exp-card:hover { border-color: var(--border-hover); }
+  .exp-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .exp-co {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+  }
+  .exp-tenure {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+  .exp-role {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .exp-summary {
+    font-size: 13px;
+    color: #7A7670;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .exp-bullets {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+  .exp-bullets li {
+    font-size: 13px;
+    color: #9A9690;
+    line-height: 1.55;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 1px;
+  }
+  .exp-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--tag-bg);
+    border: 0.5px solid var(--tag-border);
+    color: var(--tag-text);
+    letter-spacing: 0.04em;
+  }
+  .tag.green {
+    background: var(--green-bg);
+    border-color: var(--green-border);
+    color: var(--green-text);
+  }
+  .detail-link {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .detail-link:hover { color: var(--accent); }
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    background: rgba(200,169,110,0.07);
+    border: 0.5px solid rgba(200,169,110,0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 6px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .skill-group {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .skill-group-title {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-pill {
+    font-size: 12px;
+    color: #9A9690;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 5px;
+  }
+
+  /* HIGHLIGHTS */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .highlight-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+  .highlight-card:hover { border-color: var(--border-hover); }
+  .hl-type {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .hl-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .hl-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .hl-metric {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    border-top: 0.5px solid var(--border);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* COMPETITIONS */
+  .comp-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .comp-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .comp-rank {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .comp-name {
+    font-size: 11px;
+    color: #9A9690;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .comp-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .comp-link:hover { color: var(--accent); }
+
+  /* EDUCATION */
+  .edu-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .edu-main { flex: 1; }
+  .edu-degree {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .edu-inst {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .edu-scores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .edu-score {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    color: var(--muted);
+  }
+  .edu-year {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  /* CONTACT */
+  .contact-bar {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .contact-text h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .contact-text p {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .contact-socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .social-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .social-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .email-btn {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: #1a1400;
+    background: var(--accent);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 0.5px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .footer-back {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+</style>
+
+<div class="port">
+  <nav class="nav">
+    <span class="nav-logo">Rajesh <em style="font-style:italic">Dhanda</em></span>
+    <div class="nav-links">
+      <a href="#">Experience</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+      <a href="#" class="nav-cta">Résumé ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div style="max-width:860px;margin:0 auto;padding:0 32px;">
+    <div class="hero" style="padding-left:0;padding-right:0;">
+      <div>
+        <div class="hero-eyebrow">ML Platform Engineer</div>
+        <h1 class="hero-name">Rajesh<br><em>Dhanda</em></h1>
+        <p class="hero-title">Senior MLE · Haleon &nbsp;·&nbsp; ex-CARS24 &nbsp;·&nbsp; IIT Kanpur</p>
+        <p class="hero-bio">I design and build scalable ML & LLM platforms that take prototypes to production — across RAG systems, agentic tools, and cloud-native inference infrastructure.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary"><i class="ti ti-file-text" aria-hidden="true"></i> View Résumé</a>
+          <a href="#" class="btn-secondary"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a href="#" class="btn-secondary"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:8px;">
+        <div class="hero-avatar">RD</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center;line-height:1.8;letter-spacing:0.04em;">
+          Bengaluru, India<br>Open to Roles
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cloud-logos">
+    <span class="cloud-label">Core stack</span>
+    <span class="cloud-chip">Azure</span>
+    <span class="cloud-chip">GCP</span>
+    <span class="cloud-chip">Databricks</span>
+    <span class="cloud-chip">Docker</span>
+    <span class="cloud-chip">Kubernetes</span>
+    <span class="cloud-chip">FastAPI</span>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-divider">
+    <div class="section-header">
+      <span class="section-label">Experience</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-co">HALEON</div>
+          <div class="exp-role">Senior Machine Learning Engineer (MLOps)</div>
+        </div>
+        <span class="exp-tenure">Apr 2024 – Present</span>
+      </div>
+      <p class="exp-summary">Led MLOps & Agentic-RAG foundations for DS and GenAI services on Azure & Databricks across multiple product teams.</p>
+      <ul class="exp-bullets">
+        <li>Architected enterprise GenAI platform (FastAPI + React + Azure OpenAI) for Finance, Procurement & Help Center</li>
+        <li>Built global AI search across 500+ brand websites in 15+ countries with sub-second retrieval</li>
+        <li>Delivered MLOps framework for Marketing Mix Models via Databricks Bundles & GitHub Actions</li>
+      </ul>
+      <div class="exp-footer">
+        <div class="tag-row">
+          <span class="tag">Azure OpenAI</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Databricks</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+        <a href="#" class="detail-link"><i class="ti ti-external-link" aria-hidden="true"></i> Full details</a>
+      </div>
+      <div>
+        <span class="award-badge">★ Bronze Award — Unlock Value</span>
+        <span class="award-badge">★ Excellence Award 2025</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-co">CARS24</div>
+          <div class="exp-role">Machine Learning Engineer (MLOps)</div>
+        </div>
+        <span class="exp-tenure">Sept 2021 – Apr 2024</span>
+      </div>
+      <p class="exp-summary">Productionized DS, Data Engineering & BI services on GCP — GKE, KServe, Triton Inference Server, Airflow.</p>
+      <ul class="exp-bullets">
+        <li>Migrated 30+ DS workloads to GKE with canary deployments, monitoring & cost optimisation</li>
+        <li>Built Inference Store (EdgeDB + FastAPI) with ~5ms latency, used across 10+ DS services</li>
+        <li>Administered Airflow platform running 1000+ daily task executions across 70+ DAGs</li>
+      </ul>
+      <div class="exp-footer">
+        <div class="tag-row">
+          <span class="tag green">GCP</span>
+          <span class="tag green">GKE</span>
+          <span class="tag green">KServe</span>
+          <span class="tag green">Triton</span>
+          <span class="tag green">Airflow</span>
+        </div>
+        <a href="#" class="detail-link"><i class="ti ti-external-link" aria-hidden="true"></i> Full details</a>
+      </div>
+      <div>
+        <span class="award-badge">★ Rookie Award Q3 2022</span>
+      </div>
+    </div>
+
+    <div class="exp-card" style="opacity:0.7;">
+      <div class="exp-top">
+        <div>
+          <div class="exp-co" style="color:var(--muted);">DEEP SIGHT AI LABS &nbsp;/&nbsp; DOCBOT+</div>
+          <div class="exp-role" style="font-size:13px;">Computer Vision & AI Internships</div>
+        </div>
+        <span class="exp-tenure">2021</span>
+      </div>
+      <p class="exp-summary" style="margin-bottom:0;">Object detection & tracking (DeepSort), healthcare symptom mapping algorithms, TFLite on Raspberry Pi.</p>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section-divider">
+    <div class="section-header">
+      <span class="section-label">Skills</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud & Infrastructure</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Azure</span>
+          <span class="skill-pill">GCP</span>
+          <span class="skill-pill">Databricks</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Kubernetes</span>
+          <span class="skill-pill">GKE</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">MLOps & Data</div>
+        <div class="skill-pills">
+          <span class="skill-pill">MLOps</span>
+          <span class="skill-pill">Airflow</span>
+          <span class="skill-pill">Unity Catalog</span>
+          <span class="skill-pill">Feast</span>
+          <span class="skill-pill">Spark</span>
+          <span class="skill-pill">Snowflake</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">GenAI & LLMs</div>
+        <div class="skill-pills">
+          <span class="skill-pill">LangChain</span>
+          <span class="skill-pill">LangGraph</span>
+          <span class="skill-pill">RAG</span>
+          <span class="skill-pill">Azure OpenAI</span>
+          <span class="skill-pill">MCP</span>
+          <span class="skill-pill">AI Search</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Backend & APIs</div>
+        <div class="skill-pills">
+          <span class="skill-pill">FastAPI</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">GitHub Actions</span>
+          <span class="skill-pill">KServe</span>
+          <span class="skill-pill">Triton</span>
+          <span class="skill-pill">GitOps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="section-divider">
+    <div class="section-header">
+      <span class="section-label">Featured Projects</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="hl-type">Enterprise Platform</div>
+        <div class="hl-name">Haleon GenAI Assistant</div>
+        <div class="hl-desc">Multi-team AI platform integrating Azure OpenAI, LangChain agents & hybrid search for Finance, Procurement & Help Center.</div>
+        <div class="hl-metric"><span>Azure OpenAI · LangGraph · FastAPI</span><span>→ view ↗</span></div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-type">Search at Scale</div>
+        <div class="hl-name">Global Consumer Help Center</div>
+        <div class="hl-desc">AI search across 500+ brand websites in 15+ countries, cutting support costs and agent dependency.</div>
+        <div class="hl-metric"><span>Azure AI Search · Scrapy · RAG</span><span>→ view ↗</span></div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-type">ML Infrastructure</div>
+        <div class="hl-name">CARS24 ML Platform</div>
+        <div class="hl-desc">Migrated 30+ DS workloads to GKE. Built Inference Store with 5ms latency, Feature Store & Airflow platform.</div>
+        <div class="hl-metric"><span>GKE · KServe · EdgeDB · Airflow</span><span>→ view ↗</span></div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-type">Open Source App</div>
+        <div class="hl-name">CanvasNote</div>
+        <div class="hl-desc">Native Linux note-taking app with stylus support & palm rejection. Published on Ubuntu Snap Store.</div>
+        <div class="hl-metric"><span>GTK4 · libadwaita · Snapcraft</span><span>→ snap ↗</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITIONS -->
+  <div class="section-divider">
+    <div class="section-header">
+      <span class="section-label">Competitions</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-card">
+        <div class="comp-rank">#1</div>
+        <div class="comp-name">HackerEarth ML<br>Marketing Optimisation</div>
+        <a href="#" class="comp-link">leaderboard ↗</a>
+      </div>
+      <div class="comp-card">
+        <div class="comp-rank">#5</div>
+        <div class="comp-name">HackerEarth ML<br>Wind Power Prediction</div>
+        <a href="#" class="comp-link">leaderboard ↗</a>
+      </div>
+      <div class="comp-card">
+        <div class="comp-rank">#21</div>
+        <div class="comp-name">GHF Hackathon<br>Credit Risk — Univ.AI</div>
+        <a href="#" class="comp-link">certificate ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section-divider">
+    <div class="section-header">
+      <span class="section-label">Education</span>
+      <div class="section-line"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:10px;">
+      <div class="edu-card">
+        <div class="edu-main">
+          <div class="edu-degree">M.Sc Physics — Computational Physics</div>
+          <div class="edu-inst">Indian Institute of Technology, Kanpur</div>
+          <div class="edu-scores">
+            <span class="edu-score">JEST AIR 65</span>
+            <span class="edu-score">IIT JAM AIR 22</span>
+            <span class="edu-score">CSIR-NET AIR 51</span>
+            <span class="edu-score">GATE CSE</span>
+          </div>
+        </div>
+        <div class="edu-year">2018 – 2020</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-main">
+          <div class="edu-degree">B.Sc Physics Honours</div>
+          <div class="edu-inst">Maharshi Dayanand University, Rohtak</div>
+        </div>
+        <div class="edu-year">2015 – 2018</div>
+      </div>
+    </div>
+    <a href="#" style="font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.04em;">View certifications ↗</a>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section-divider" style="padding-top:48px;">
+    <div class="contact-bar">
+      <div class="contact-text">
+        <h3>Let's build something.</h3>
+        <p>Open to ML platform roles, consulting & collaborations.</p>
+      </div>
+      <div class="contact-socials">
+        <a href="#" class="social-btn">LinkedIn</a>
+        <a href="#" class="social-btn">GitHub</a>
+        <a href="#" class="social-btn">Medium</a>
+        <a href="mailto:rajeshkrdhanda@gmail.com" class="email-btn">Email me ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-copy">© 2025 Rajesh Dhanda</span>
+    <span class="footer-back">ML Platform Engineer · Bengaluru</span>
+  </div>
+</div>
