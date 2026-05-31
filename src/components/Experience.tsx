@@ -61,14 +61,14 @@ export default function Experience() {
         {experiences.map((exp) => (
           <div
             key={exp.company}
-            className={`bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-5 hover:border-[var(--border-hover)] transition-colors ${exp.muted ? 'opacity-70' : ''}`}
+            className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-5 hover:border-[var(--border-hover)] transition-colors"
           >
             <div className="flex items-start justify-between gap-3 mb-2.5">
               <div>
-                <div className={`font-[family-name:var(--font-mono)] text-[13px] font-medium tracking-[0.04em] ${exp.muted ? 'text-[var(--muted)]' : 'text-[var(--accent)]'}`}>
+                <div className="font-[family-name:var(--font-mono)] text-[13px] font-medium tracking-[0.04em] text-[var(--accent)]">
                   {exp.company}
                 </div>
-                <div className={`text-[15px] font-medium text-[var(--text)] leading-tight ${exp.muted ? 'text-[13px]' : ''}`}>
+                <div className="text-[15px] font-medium text-[var(--text)] leading-tight">
                   {exp.role}
                 </div>
               </div>
