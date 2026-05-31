@@ -7,110 +7,45 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-lg border-b border-gray-700 shadow-lg z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
-              Rajesh Dhanda
-            </Link>
-          </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
-              <Link href="/" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Home
-              </Link>
-              <Link href="/#about" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                About
-              </Link>
-              <Link href="/#experience" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Experience
-              </Link>
-              <Link href="/#skills" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Skills
-              </Link>
-              <Link href="/#competitions" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Competitions
-              </Link>
-              <Link href="/#projects" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Projects
-              </Link>
-              <Link href="/#canvasnote" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                CanvasNote
-              </Link>
-              <Link href="/#education" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Education
-              </Link>
-              <Link href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Resume
-              </Link>
-              {/* <Link href="/bucket-list" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Bucket List
-              </Link> */}
-              <Link href="/#contact" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105">
-                Contact
-              </Link>
-            </div>
-          </div>
-          
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-all duration-200"
-            >
-              <span className="sr-only">Open main menu</span>
-              <div className="space-y-1">
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-              </div>
-            </button>
-          </div>
+    <nav className="fixed top-0 w-full bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--border)] z-50">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 flex items-center justify-between h-14">
+        <Link href="/" className="font-[family-name:var(--font-display)] text-[17px] text-[var(--text)]">
+          Rajesh <span className="text-[var(--accent)]">Dhanda</span>
+        </Link>
+
+        <div className="hidden md:flex items-center gap-7">
+          <Link href="#experience" className="text-[var(--muted)] text-[13px] hover:text-[var(--text)] transition-colors">Experience</Link>
+          <Link href="#contact" className="text-[var(--muted)] text-[13px] hover:text-[var(--text)] transition-colors">Contact</Link>
+          <a
+            href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--text)] text-[12px] font-medium border border-[var(--border-hover)] px-4 py-1.5 rounded-md hover:border-[var(--accent)] hover:bg-[rgba(200,169,110,0.06)] transition-all"
+          >
+            Résumé ↗
+          </a>
         </div>
+
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-[var(--muted)] p-2"
+          aria-label="Toggle menu"
+        >
+          <div className="space-y-1.5">
+            <span className={`block w-5 h-[1.5px] bg-current transition-all ${isMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-[1.5px] bg-current transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-[1.5px] bg-current transition-all ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          </div>
+        </button>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-4 pt-4 pb-6 space-y-2 bg-gray-900/95 backdrop-blur-lg border-t border-gray-700 shadow-lg">
-            <Link href="/" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Home
-            </Link>
-            <Link href="/#about" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              About
-            </Link>
-            <Link href="/#experience" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Experience
-            </Link>
-            <Link href="/#skills" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Skills
-            </Link>
-            <Link href="/#competitions" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Competitions
-            </Link>
-            <Link href="/#projects" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Projects
-            </Link>
-            <Link href="/#canvasnote" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              CanvasNote
-            </Link>
-            <Link href="/#education" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Education
-            </Link>
-            <Link href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Resume
-            </Link>
-            {/* <Link href="/bucket-list" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Bucket List
-            </Link> */}
-            <Link href="/#contact" className="text-gray-300 hover:text-blue-400 hover:bg-gray-800 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200">
-              Contact
-            </Link>
-          </div>
+        <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg)]/95 backdrop-blur-md px-8 py-4 space-y-3">
+          <Link href="#experience" onClick={() => setIsMenuOpen(false)} className="block text-[var(--muted)] text-sm hover:text-[var(--text)]">Experience</Link>
+          <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="block text-[var(--muted)] text-sm hover:text-[var(--text)]">Contact</Link>
+          <a href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block text-[var(--text)] text-sm">Résumé ↗</a>
         </div>
       )}
     </nav>
   )
 }
-

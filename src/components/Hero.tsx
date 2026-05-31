@@ -1,109 +1,81 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { getAssetPath } from '../utils/assets'
 
 export default function Hero() {
-  const [displayedName, setDisplayedName] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [showCursor, setShowCursor] = useState(true)
-  
-  const fullName = "Rajesh Dhanda"
-  
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout
-
-    if (isTyping && currentIndex < fullName.length) {
-      // Typing each character
-      timeoutId = setTimeout(() => {
-        setDisplayedName(fullName.slice(0, currentIndex + 1))
-        setCurrentIndex(prev => prev + 1)
-      }, 150) // Slower typing for better effect
-    } else if (isTyping && currentIndex >= fullName.length) {
-      // Finished typing, wait then restart
-      setShowCursor(false)
-      timeoutId = setTimeout(() => {
-        setCurrentIndex(0)
-        setDisplayedName('')
-        setIsTyping(true)
-        setShowCursor(true)
-      }, 3000) // Wait 3 seconds before restarting
-    }
-
-    return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId)
-      }
-    }
-  }, [currentIndex, isTyping, fullName])
-
-  const renderName = () => {
-    return (
-      <span className="relative inline-block">
-        <span className="text-blue-600 font-mono font-bold">
-          {displayedName}
-          {showCursor && <span className="animate-pulse text-blue-600">|</span>}
-        </span>
-      </span>
-    )
-  }
-
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Hi, I&apos;m <span className="text-blue-600">{renderName()}</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 mt-4 font-medium">
-              ML Platform Engineer & AI Systems Architect
-            </p>
-            <p className="text-lg text-gray-600 mt-6 leading-relaxed">
-              I design, build scalable and resilient machine learning and LLM platforms that power intelligent applications
-              at enterprise scale. With experience across ML lifecycles, RAG apps, and agentic tools, 
-              I transform prototypes into production-ready AI systems.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <a 
-                href="#experience" 
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-center"
-              >
-                View My Work
-              </a>
-              <a 
-                href="#contact" 
-                className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors text-center"
-              >
-                Get In Touch
-              </a>
-            </div>
-          </div>
-          
-          <div className="order-1 lg:order-2 flex justify-center">
-            <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
-              <div className="w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden relative">
-                <Image
-                  src={getAssetPath("/profile-picture.png")}
-                  alt="Rajesh Dhanda - ML Platform Engineer"
-                  width={416}
-                  height={416}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
+    <section id="home" className="pt-24 pb-8 max-w-[1400px] mx-auto px-8 lg:px-16">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-10 items-center">
+        <div>
+          <p className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] tracking-[0.12em] uppercase mb-4">
+            ML Platform Engineer
+          </p>
+          <h1 className="font-[family-name:var(--font-display)] text-[48px] sm:text-[52px] leading-[1.05] text-[var(--text)] mb-1.5">
+            Rajesh <span className="text-[var(--accent)]">Dhanda</span>
+          </h1>
+          <p className="text-[16px] text-[var(--muted)] font-light mb-5 tracking-[0.01em]">
+            Senior MLE · Haleon &nbsp;·&nbsp; ex-CARS24 &nbsp;·&nbsp; IIT Kanpur
+          </p>
+          <p className="text-[14px] text-[#B8B3AD] leading-[1.75] max-w-[520px] mb-7">
+            I design and build scalable ML & LLM platforms that take prototypes to production — across RAG systems, agentic tools, and cloud-native inference infrastructure.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[var(--accent)] text-[#1a1400] px-5 py-2.5 rounded-md text-[13px] font-medium hover:opacity-85 transition-opacity"
+            >
+              View Résumé
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rajesh-dhanda/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="/skills-projects"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+            >
+              Projects
+            </a>
+            <a
+              href="/hackathons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+            >
+              AI Hackathons
+            </a>
+            <a
+              href="/education"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+            >
+              Education
+            </a>
           </div>
         </div>
-        
-        <div className="flex justify-center mt-12">
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
-            </div>
+
+        <div className="hidden md:flex flex-col items-center gap-3 justify-center -ml-30">
+          <div className="w-[180px] h-[180px] rounded-full bg-[var(--bg3)] border-[1.5px] border-[var(--border-hover)] overflow-hidden">
+            <Image
+              src={getAssetPath("/profile-picture.png")}
+              alt="Rajesh Dhanda"
+              width={180}
+              height={180}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
+          <p className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] text-center leading-[1.8] tracking-[0.04em]">
+            Bengaluru, India
+          </p>
         </div>
       </div>
     </section>
