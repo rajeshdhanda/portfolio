@@ -36,7 +36,7 @@ export default function Hero() {
               LinkedIn
             </a>
             <a
-              href="/skills-projects"
+              href={getAssetPath('/skills-projects')}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
@@ -44,7 +44,7 @@ export default function Hero() {
               Projects
             </a>
             <a
-              href="/hackathons"
+              href={getAssetPath('/hackathons')}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
@@ -52,7 +52,7 @@ export default function Hero() {
               AI Hackathons
             </a>
             <a
-              href="/education"
+              href={getAssetPath('/education')}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { getAssetPath } from '../../../utils/assets'
 
 export default function HaleonExperience() {
   return (
@@ -62,7 +63,7 @@ export default function HaleonExperience() {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-[15px] font-medium text-[var(--accent)]">Global Consumer Help Center</h3>
             <a
-              href="/experience/haleon/help-center-demo"
+              href={getAssetPath('/experience/haleon/help-center-demo')}
               target="_blank"
               rel="noopener noreferrer"
               className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"

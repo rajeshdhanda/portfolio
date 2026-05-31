@@ -1,5 +1,6 @@
 'use client';
 
+import { getAssetPath } from '../../../../utils/assets'
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const SAMPLE_RESULTS = [
@@ -296,7 +297,7 @@ export default function HelpCenterDemoPage() {
       <div className="max-w-[900px] mx-auto">
         {/* Back Link */}
         <a
-          href="/experience/haleon"
+          href={getAssetPath('/experience/haleon')}
           className="inline-flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-[11px] text-[var(--muted)] hover:text-[var(--accent)] transition-colors mb-8"
         >
           ← Back to Haleon Experience
