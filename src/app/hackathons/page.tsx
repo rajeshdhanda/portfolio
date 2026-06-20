@@ -70,7 +70,7 @@ export default function HackathonsPage() {
             </div>
 
             <h3 className="text-[14px] font-medium text-[var(--text)] mb-3 leading-tight">{c.title}</h3>
-            <p className="text-[12px] text-[#9A9690] leading-[1.6] mb-4">{c.description}</p>
+            <p className="text-[12px] text-[var(--text-soft)] leading-[1.6] mb-4">{c.description}</p>
 
             <div className="flex flex-wrap gap-1.5 mb-4">
               {c.technologies.map((t) => (

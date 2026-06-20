@@ -109,7 +109,7 @@ export default function SkillsProjectsPage() {
               <div className="text-[11px] text-[var(--muted)] mb-3">{g.description}</div>
               <div className="flex flex-wrap gap-1.5">
                 {g.skills.map((s) => (
-                  <span key={s} className="font-[family-name:var(--font-mono)] text-[11px] text-[#9A9690] bg-[var(--bg3)] border border-[var(--border)] px-2.5 py-1 rounded-[5px]">
+                  <span key={s} className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--text-soft)] bg-[var(--bg3)] border border-[var(--border)] px-2.5 py-1 rounded-[5px]">
                     {s}
                   </span>
                 ))}
@@ -136,13 +136,13 @@ export default function SkillsProjectsPage() {
         <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6">
             <div>
-              <p className="text-[13px] text-[#9A9690] leading-[1.7] mb-5">
+              <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-5">
                 A comprehensive native Linux note-taking and drawing application optimized for 2-in-1/tablet devices with stylus support, featuring intelligent palm rejection, multiple input methods, and professional organization tools.
               </p>
 
               <div className="bg-[rgba(200,169,110,0.05)] border border-[rgba(200,169,110,0.15)] rounded-[8px] p-4 mb-5">
                 <div className="text-[12px] font-medium text-[var(--accent)] mb-1.5">Why I Built This</div>
-                <p className="text-[12px] text-[#9A9690] leading-[1.6]">
+                <p className="text-[12px] text-[var(--text-soft)] leading-[1.6]">
                   I use an ASUS ROG Flow Z13 (2022) with touchscreen and stylus on Linux. Since I couldn&apos;t find a Linux note-taking app that handled stylus input and palm rejection reliably, I built one tailored to my needs and shared it on the Snap Store for others to use.
                 </p>
               </div>
@@ -160,7 +160,7 @@ export default function SkillsProjectsPage() {
                   ].map((f) => (
                     <div key={f} className="flex items-start gap-2">
                       <span className="text-[var(--accent2)] text-[10px] mt-0.5">✓</span>
-                      <span className="text-[12px] text-[#9A9690]">{f}</span>
+                      <span className="text-[12px] text-[var(--text-soft)]">{f}</span>
                     </div>
                   ))}
                 </div>
@@ -228,7 +228,7 @@ export default function SkillsProjectsPage() {
                   {p.tag}
                 </span>
               </div>
-              <p className="text-[12px] text-[#9A9690] leading-[1.6] mb-4">{p.description}</p>
+              <p className="text-[12px] text-[var(--text-soft)] leading-[1.6] mb-4">{p.description}</p>
               <div className="flex flex-wrap gap-1.5 mb-3">
                 {p.technologies.map((t) => (
                   <span key={t} className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] bg-[var(--bg3)] border border-[var(--border)] px-2 py-0.5 rounded">

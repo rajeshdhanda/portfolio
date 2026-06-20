@@ -96,7 +96,7 @@ export default function EducationPage() {
                 <tr key={edu.degree} className={i < educationTimeline.length - 1 ? 'border-b border-[var(--border)]' : ''}>
                   <td className="px-5 py-4 font-[family-name:var(--font-mono)] text-[12px] text-[var(--muted)] whitespace-nowrap">{edu.year}</td>
                   <td className="px-5 py-4 text-[13px] font-medium text-[var(--text)]">{edu.degree}</td>
-                  <td className="px-5 py-4 text-[12px] text-[#9A9690]">{edu.institute}</td>
+                  <td className="px-5 py-4 text-[12px] text-[var(--text-soft)]">{edu.institute}</td>
                   <td className="px-5 py-4 text-[11px] text-[var(--muted)] hidden sm:table-cell">{edu.description}</td>
                 </tr>
               ))}
@@ -117,7 +117,7 @@ export default function EducationPage() {
             <div className="space-y-3">
               {researchExams.map((e) => (
                 <div key={e.name} className="flex items-center justify-between">
-                  <span className="text-[12px] text-[#9A9690]">{e.name}</span>
+                  <span className="text-[12px] text-[var(--text-soft)]">{e.name}</span>
                   <span className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.07)] border border-[rgba(200,169,110,0.2)] px-2.5 py-0.5 rounded">
                     {e.rank}
                   </span>
@@ -132,7 +132,7 @@ export default function EducationPage() {
             <div className="space-y-3">
               {competitiveExams.map((e) => (
                 <div key={e.name} className="flex items-center justify-between">
-                  <span className="text-[12px] text-[#9A9690]">{e.name}</span>
+                  <span className="text-[12px] text-[var(--text-soft)]">{e.name}</span>
                   <span className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--green-text)] bg-[var(--green-bg)] border border-[var(--green-border)] px-2.5 py-0.5 rounded">
                     {e.rank}
                   </span>
@@ -150,7 +150,7 @@ export default function EducationPage() {
         </div>
         <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-5">
           <div className="text-[14px] font-medium text-[var(--text)] mb-2">Machine Learning & AI Certifications</div>
-          <p className="text-[12px] text-[#9A9690] leading-[1.6] mb-4">
+          <p className="text-[12px] text-[var(--text-soft)] leading-[1.6] mb-4">
             Collection of ML/AI certifications covering deep learning, data science, cloud platforms from leading tech companies and educational institutions.
           </p>
           <div className="flex items-center gap-3">
@@ -181,7 +181,7 @@ export default function EducationPage() {
                 <div className="text-[13px] font-medium text-[var(--text)]">{l.title}</div>
                 <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] whitespace-nowrap">{l.year}</span>
               </div>
-              <p className="text-[12px] text-[#9A9690] leading-[1.6]">{l.description}</p>
+              <p className="text-[12px] text-[var(--text-soft)] leading-[1.6]">{l.description}</p>
             </div>
           ))}
         </div>
