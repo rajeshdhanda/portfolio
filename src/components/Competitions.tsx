@@ -20,7 +20,7 @@ export default function Competitions() {
             <div className="font-[family-name:var(--font-display)] text-[28px] text-[var(--accent)] leading-none mb-1">
               {c.rank}
             </div>
-            <div className="text-[11px] text-[#B8B3AD] leading-[1.4] mb-1.5 whitespace-pre-line">
+            <div className="text-[11px] text-[var(--text-soft)] leading-[1.4] mb-1.5 whitespace-pre-line">
               {c.name}
             </div>
             <a href={c.link} target="_blank" rel="noopener noreferrer" className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] hover:text-[var(--accent)] transition-colors tracking-[0.04em]">

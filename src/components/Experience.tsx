@@ -79,14 +79,14 @@ export default function Experience() {
               </span>
             </div>
 
-            <p className="text-[13px] text-[#A8A3A0] leading-relaxed mb-3">
+            <p className="text-[13px] text-[var(--text-soft)] leading-relaxed mb-3">
               {exp.summary}
             </p>
 
             {exp.bullets.length > 0 && (
               <ul className="mb-3.5 space-y-1">
                 {exp.bullets.map((b, i) => (
-                  <li key={i} className="text-[13px] text-[#B8B3AD] leading-[1.55] pl-3.5 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px] before:top-[1px]" dangerouslySetInnerHTML={{ __html: b }}>
+                  <li key={i} className="text-[13px] text-[var(--text-soft)] leading-[1.55] pl-3.5 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px] before:top-[1px]" dangerouslySetInnerHTML={{ __html: b }}>
                   </li>
                 ))}
               </ul>

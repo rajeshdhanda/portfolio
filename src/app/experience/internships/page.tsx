@@ -26,14 +26,14 @@ export default function InternshipsExperience() {
             </div>
             <span className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--muted)] whitespace-nowrap">Jun – Sept 2021</span>
           </div>
-          <p className="text-[13px] text-[#B8B3AD] leading-[1.7] mb-4">
+          <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
             Developed solutions for object detection, object tracking, and video surveillance utilizing Deep Learning techniques.
           </p>
           <ul className="space-y-2.5 mb-4">
-            <li className="text-[13px] text-[#B8B3AD] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               Implemented a reference direction-based entry-exit system and Object Counting Feature using DeepSort.
             </li>
-            <li className="text-[13px] text-[#B8B3AD] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               Conducted TensorFlow Lite model conversion of DeepSort and executed its deployment on Raspberry Pi hardware.
             </li>
           </ul>
@@ -58,17 +58,17 @@ export default function InternshipsExperience() {
             </div>
             <span className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--muted)] whitespace-nowrap">Mar – May 2021</span>
           </div>
-          <p className="text-[13px] text-[#B8B3AD] leading-[1.7] mb-4">
+          <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
             Developed intelligent healthcare solutions focusing on disease diagnosis and symptom analysis using machine learning algorithms.
           </p>
           <ul className="space-y-2.5 mb-4">
-            <li className="text-[13px] text-[#B8B3AD] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               Developed algorithm for many-to-many mapping of symptoms to diseases, enabling disease diagnosis based on symptom sets.
             </li>
-            <li className="text-[13px] text-[#B8B3AD] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               Created mathematical formulation to facilitate symptom recommendation, improving user experience and healthcare decision-making.
             </li>
-            <li className="text-[13px] text-[#B8B3AD] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               Generated random datasets to rigorously test and optimize ML algorithms for recommendation systems.
             </li>
           </ul>

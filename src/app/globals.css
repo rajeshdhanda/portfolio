@@ -6,8 +6,10 @@
   --bg3: #1A1C20;
   --border: rgba(255,255,255,0.07);
   --border-hover: rgba(255,255,255,0.14);
+  --border-strong: rgba(255,255,255,0.25);
   --text: #F0EDE8;
   --muted: #888580;
+  --text-soft: #B8B3AD;
   --accent: #C8A96E;
   --accent2: #5DB8A0;
   --tag-bg: rgba(200,169,110,0.1);
@@ -18,6 +20,26 @@
   --green-text: #5DB8A0;
 }
 
+:root[data-theme='light'] {
+  --bg: #F6F5F2;
+  --bg2: #FFFFFF;
+  --bg3: #F0EEE9;
+  --border: rgba(18, 21, 25, 0.09);
+  --border-hover: rgba(18, 21, 25, 0.18);
+  --border-strong: rgba(18, 21, 25, 0.3);
+  --text: #1E2328;
+  --muted: #5A6168;
+  --text-soft: #3F4750;
+  --accent: #A67C3F;
+  --accent2: #1A8B74;
+  --tag-bg: rgba(166, 124, 63, 0.12);
+  --tag-border: rgba(166, 124, 63, 0.3);
+  --tag-text: #8E6A35;
+  --green-bg: rgba(26, 139, 116, 0.1);
+  --green-border: rgba(26, 139, 116, 0.2);
+  --green-text: #167964;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,6 +47,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 section {

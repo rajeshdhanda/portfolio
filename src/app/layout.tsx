@@ -18,8 +18,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeScript = `
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  `;
+
   return (
     <html lang="en" className={`${outfit.variable} ${dmSerif.variable} ${dmMono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${outfit.className} antialiased`}>
         <Navbar />
         {children}

@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="text-[16px] text-[var(--muted)] font-light mb-5 tracking-[0.01em]">
             Senior MLE · Haleon &nbsp;·&nbsp; ex-CARS24 &nbsp;·&nbsp; IIT Kanpur
           </p>
-          <p className="text-[14px] text-[#B8B3AD] leading-[1.75] max-w-[520px] mb-7">
+          <p className="text-[14px] text-[var(--text-soft)] leading-[1.75] max-w-[520px] mb-7">
             I design and build scalable ML & LLM platforms that take prototypes to production — across RAG systems, agentic tools, and cloud-native inference infrastructure.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -31,7 +31,7 @@ export default function Hero() {
               href="https://www.linkedin.com/in/rajesh-dhanda/"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
               LinkedIn
             </a>
@@ -39,7 +39,7 @@ export default function Hero() {
               href={getAssetPath('/skills-projects')}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
               Projects
             </a>
@@ -47,7 +47,7 @@ export default function Hero() {
               href={getAssetPath('/hackathons')}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
               AI Hackathons
             </a>
@@ -55,7 +55,7 @@ export default function Hero() {
               href={getAssetPath('/education')}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[rgba(255,255,255,0.25)] transition-all"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
               Education
             </a>
