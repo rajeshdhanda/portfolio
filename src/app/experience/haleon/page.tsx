@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getAssetPath } from '../../../utils/assets'
+import AwardsRecognition from '../../../components/AwardsRecognition'
 
 export default function HaleonExperience() {
   return (
@@ -27,35 +28,7 @@ export default function HaleonExperience() {
       </div>
 
       {/* Awards & Recognition */}
-      <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-6 mb-8">
-        <div className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.1em] text-[var(--accent)] mb-4">Awards & Recognition</div>
-        <div className="space-y-3">
-          <div className="flex items-start justify-between gap-3">
-            <p className="text-[13px] text-[var(--text-soft)] leading-[1.6]">
-              <span className="text-[var(--text)] font-medium">Global Employee Recognition</span> — Led MLE for Consumer Help Center, Commercial Tech, and Contract Intelligence Platform.
-            </p>
-            <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] whitespace-nowrap">Jan 2026</span>
-          </div>
-          <div className="flex items-start justify-between gap-3">
-            <p className="text-[13px] text-[var(--text-soft)] leading-[1.6]">
-              <span className="text-[var(--text)] font-medium">2025 Excellence Award</span> — India Capability Centre - Built Agentic-RAG Contract AI platform with Procurement Analytics and Data Office.
-            </p>
-            <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] whitespace-nowrap">Dec 2025</span>
-          </div>
-          <div className="flex items-start justify-between gap-3">
-            <p className="text-[13px] text-[var(--text-soft)] leading-[1.6]">
-              <span className="text-[var(--text)] font-medium">Global Employee Recognition</span> — Presented Contract Intelligence Platform and Consumer Help Center at Career and Technovation Days.
-            </p>
-            <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] whitespace-nowrap">Sep 2025</span>
-          </div>
-          <div className="flex items-start justify-between gap-3">
-            <p className="text-[13px] text-[var(--text-soft)] leading-[1.6]">
-              <span className="text-[var(--text)] font-medium">Global Employee Recognition</span> — Outstanding efforts (GitHub Stats) for MLOps Template and Agentic RAG Foundations used across multiple projects.
-            </p>
-            <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] whitespace-nowrap">Nov 2024</span>
-          </div>
-        </div>
-      </div>
+      <AwardsRecognition />
 
       {/* Projects */}
       <div className="space-y-6">
@@ -82,7 +55,7 @@ export default function HaleonExperience() {
               Providing robust search, autocomplete, and suggestion APIs from Azure AI Search directly to the frontend team for seamless integration.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Agentic RAG Agent provides streaming responses along with search results — similar to a Google Search experience with AI Overview (as shown in demo).
+              AI Agent provides streaming responses along with search results — similar to a ChatGPT experience — and captures user feedback through thumbs up and thumbs down.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
               LLM-as-a-Judge evaluation framework with multiple judges evaluating answers across different scenarios — disclaimer compliance, groundedness, response consistency, and relevance — ensuring quality and safety of generated responses.

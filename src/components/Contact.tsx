@@ -32,7 +32,7 @@ export default function Contact() {
           © 2025 Rajesh Dhanda
         </span>
         <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] tracking-[0.06em]">
-          ML Platform Engineer · Bengaluru
+          Senior Machine Learning Engineer · Bengaluru
         </span>
       </div>
     </section>

@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-10 items-center">
         <div>
           <p className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] tracking-[0.12em] uppercase mb-4">
-            ML Platform Engineer
+            Senior Machine Learning Engineer
           </p>
           <h1 className="font-[family-name:var(--font-display)] text-[48px] sm:text-[52px] leading-[1.05] text-[var(--text)] mb-1.5">
             Rajesh <span className="text-[var(--accent)]">Dhanda</span>
