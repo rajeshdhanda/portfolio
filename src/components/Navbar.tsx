@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { getAssetPath } from '../utils/assets'
 
 type Theme = 'dark' | 'light'
 
@@ -37,16 +38,7 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
-          <Link href="#experience" className="text-[var(--muted)] text-[13px] hover:text-[var(--text)] transition-colors">Experience</Link>
-          <Link href="#contact" className="text-[var(--muted)] text-[13px] hover:text-[var(--text)] transition-colors">Contact</Link>
-          <a
-            href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--text)] text-[12px] font-medium border border-[var(--border-hover)] px-4 py-1.5 rounded-md hover:border-[var(--accent)] hover:bg-[rgba(200,169,110,0.06)] transition-all"
-          >
-            Résumé ↗
-          </a>
+          <Link href={getAssetPath('/recognition')} className="inline-flex items-center rounded-md border border-[var(--border-hover)] px-4 py-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] hover:border-[var(--accent)] hover:bg-[rgba(200,169,110,0.06)] transition-all">What Leadership Says</Link>
           <button
             type="button"
             onClick={toggleTheme}
@@ -103,9 +95,7 @@ export default function Navbar() {
 
       {isMenuOpen && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg)]/95 backdrop-blur-md px-8 py-4 space-y-3">
-          <Link href="#experience" onClick={() => setIsMenuOpen(false)} className="block text-[var(--muted)] text-sm hover:text-[var(--text)]">Experience</Link>
-          <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="block text-[var(--muted)] text-sm hover:text-[var(--text)]">Contact</Link>
-          <a href="https://drive.google.com/file/d/1rKgBAFzYi0WNvGAGq2fDO7Rn3BI-jsYL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block text-[var(--text)] text-sm">Résumé ↗</a>
+          <Link href={getAssetPath('/recognition')} onClick={() => setIsMenuOpen(false)} className="block text-[var(--muted)] text-sm font-semibold hover:text-[var(--text)]">What Leadership Says</Link>
         </div>
       )}
     </nav>

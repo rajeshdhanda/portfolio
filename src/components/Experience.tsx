@@ -95,7 +95,7 @@ export default function Experience() {
             {(exp.tags.length > 0 || exp.awards.length > 0) && (
               <>
                 <div className="flex items-center justify-end">
-                  <a href={getAssetPath(exp.detailUrl)} target="_blank" rel="noopener noreferrer" className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] hover:opacity-80 transition-opacity tracking-[0.04em] whitespace-nowrap">
+                  <a href={getAssetPath(exp.detailUrl)} target="_blank" rel="noopener noreferrer" className="font-[family-name:var(--font-mono)] text-[11px] font-semibold text-[var(--accent)] hover:opacity-80 transition-opacity tracking-[0.04em] whitespace-nowrap">
                     Full details ↗
                   </a>
                 </div>
@@ -104,7 +104,7 @@ export default function Experience() {
 
             {exp.tags.length === 0 && exp.detailUrl && (
               <div className="flex items-center justify-end">
-                <a href={getAssetPath(exp.detailUrl)} target="_blank" rel="noopener noreferrer" className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] hover:opacity-80 transition-opacity tracking-[0.04em] whitespace-nowrap">
+                <a href={getAssetPath(exp.detailUrl)} target="_blank" rel="noopener noreferrer" className="font-[family-name:var(--font-mono)] text-[11px] font-semibold text-[var(--accent)] hover:opacity-80 transition-opacity tracking-[0.04em] whitespace-nowrap">
                   Full details ↗
                 </a>
               </div>

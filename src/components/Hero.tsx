@@ -28,20 +28,12 @@ export default function Hero() {
               View Résumé
             </a>
             <a
-              href="https://www.linkedin.com/in/rajesh-dhanda/"
+              href={getAssetPath('/recognition')}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
-              LinkedIn
-            </a>
-            <a
-              href={getAssetPath('/skills-projects')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
-            >
-              Projects
+              Recognitions
             </a>
             <a
               href={getAssetPath('/hackathons')}
@@ -58,6 +50,22 @@ export default function Hero() {
               className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
             >
               Education
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rajesh-dhanda/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={getAssetPath('/skills-projects')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--border-hover)] text-[var(--muted)] px-5 py-2.5 rounded-md text-[13px] hover:text-[var(--text)] hover:border-[var(--border-strong)] transition-all"
+            >
+              Projects
             </a>
           </div>
         </div>
