@@ -213,6 +213,12 @@ const SUGGESTIONS = [
   'joint pain treatment',
 ];
 
+const FILTER_TYPE_MAP: Record<string, string> = {
+  'Knowledge Articles': 'Knowledge Article',
+  'FAQs': 'FAQ',
+  'Product Leaflets': 'Product Leaflet',
+};
+
 export default function HelpCenterDemoPage() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<typeof SAMPLE_RESULTS>([]);
@@ -221,7 +227,25 @@ export default function HelpCenterDemoPage() {
   const [aiAnswer, setAiAnswer] = useState('');
   const [aiSources, setAiSources] = useState<string[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
+  const [isRetrieving, setIsRetrieving] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [feedback, setFeedback] = useState<'up' | 'down' | null>(null);
   const streamRef = useRef<NodeJS.Timeout | null>(null);
+
+  const highlightText = (text: string, term: string) => {
+    const words = term.trim().toLowerCase().split(/\s+/).filter((w) => w.length > 2);
+    if (words.length === 0) return text;
+    const pattern = new RegExp(`(${words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+    return text.split(pattern).map((part, i) =>
+      words.includes(part.toLowerCase())
+        ? (
+          <mark key={i} className="bg-[rgba(200,169,110,0.22)] text-[var(--text)] rounded-[2px] px-0.5">
+            {part}
+          </mark>
+        )
+        : part
+    );
+  };
 
   const getAiAnswer = useCallback((searchTerm: string) => {
     // Find matching AI answer
@@ -275,6 +299,8 @@ export default function HelpCenterDemoPage() {
     setSearched(true);
     setAiAnswer('');
     setAiSources([]);
+    setActiveFilter('All');
+    setFeedback(null);
 
     // Filter results
     const filtered = SAMPLE_RESULTS.filter(
@@ -285,12 +311,26 @@ export default function HelpCenterDemoPage() {
     );
     setResults(filtered.length > 0 ? filtered : SAMPLE_RESULTS.slice(0, 4));
 
-    // Start AI answer streaming
+    // Simulate hybrid retrieval, then stream the grounded AI answer
     const aiData = getAiAnswer(searchTerm);
     if (aiData) {
-      streamAnswer(aiData.answer, aiData.sources);
+      setIsRetrieving(true);
+      streamRef.current = setTimeout(() => {
+        setIsRetrieving(false);
+        streamAnswer(aiData.answer, aiData.sources);
+      }, 700);
     }
   };
+
+  const displayedResults =
+    activeFilter === 'All'
+      ? results
+      : results.filter((r) => r.type === FILTER_TYPE_MAP[activeFilter]);
+
+  const filterCount = (filter: string) =>
+    filter === 'All'
+      ? results.length
+      : results.filter((r) => r.type === FILTER_TYPE_MAP[filter]).length;
 
   return (
     <main className="min-h-screen bg-[var(--bg)] px-6 py-16">
@@ -312,7 +352,7 @@ export default function HelpCenterDemoPage() {
             Federated Search
           </h1>
           <p className="text-[13px] text-[var(--muted)] leading-[1.7] max-w-[600px]">
-            AI-powered search across 15+ brand help centers, 400+ websites, multiple countries and languages. Features AI Overview (streaming answer) + traditional search results.
+            AI-powered search across 15+ brand help centers, 400+ websites, multiple countries and languages. A Google-style AI Overview streams a grounded answer word-by-word, ChatGPT-style, above traditional search results.
           </p>
         </div>
 
@@ -334,6 +374,7 @@ export default function HelpCenterDemoPage() {
                 if (!e.target.value) {
                   setSearched(false);
                   setAiAnswer('');
+                  setIsRetrieving(false);
                 }
               }}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
@@ -364,6 +405,23 @@ export default function HelpCenterDemoPage() {
             </div>
           )}
         </div>
+
+        {/* Retrieval phase */}
+        {searched && isRetrieving && (
+          <div className="mb-8 bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-5">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent2)] animate-pulse" />
+              <span className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.1em] text-[var(--muted)]">
+                Retrieving from Azure AI Search — hybrid vector + keyword
+              </span>
+            </div>
+            <div className="mt-4 space-y-2.5">
+              <div className="h-2 rounded bg-[var(--border)] animate-pulse w-[92%]" />
+              <div className="h-2 rounded bg-[var(--border)] animate-pulse w-[78%]" />
+              <div className="h-2 rounded bg-[var(--border)] animate-pulse w-[64%]" />
+            </div>
+          </div>
+        )}
 
         {/* AI Overview */}
         {searched && (aiAnswer || isStreaming) && (
@@ -400,6 +458,39 @@ export default function HelpCenterDemoPage() {
                 </div>
               </div>
             )}
+            {!isStreaming && aiAnswer && (
+              <div className="mt-4 pt-3 border-t border-[var(--border)] flex items-center gap-3">
+                {feedback ? (
+                  <span className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--accent2)]">
+                    Thanks for your feedback
+                  </span>
+                ) : (
+                  <>
+                    <span className="font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-[0.1em] text-[var(--muted)]">
+                      Was this helpful?
+                    </span>
+                    <button
+                      onClick={() => setFeedback('up')}
+                      aria-label="Helpful"
+                      className="text-[var(--muted)] hover:text-[var(--accent2)] transition-colors"
+                    >
+                      <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => setFeedback('down')}
+                      aria-label="Not helpful"
+                      className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+              </div>
+            )}
           </div>
         )}
 
@@ -407,16 +498,17 @@ export default function HelpCenterDemoPage() {
         {searched && (
           <div className="flex flex-wrap gap-2 mb-6">
             {['All', 'Knowledge Articles', 'FAQs', 'Product Leaflets'].map((filter) => (
-              <span
+              <button
                 key={filter}
+                onClick={() => setActiveFilter(filter)}
                 className={`font-[family-name:var(--font-mono)] text-[10px] px-3 py-1.5 rounded cursor-pointer transition-colors ${
-                  filter === 'All'
+                  filter === activeFilter
                     ? 'bg-[rgba(200,169,110,0.1)] border border-[var(--accent)] text-[var(--accent)]'
                     : 'bg-[var(--bg2)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)]'
                 }`}
               >
-                {filter}
-              </span>
+                {filter} · {filterCount(filter)}
+              </button>
             ))}
           </div>
         )}
@@ -425,9 +517,9 @@ export default function HelpCenterDemoPage() {
         {searched && (
           <div className="space-y-3">
             <div className="font-[family-name:var(--font-mono)] text-[10px] text-[var(--muted)] mb-3">
-              {results.length} results found across {new Set(results.map((r) => r.brand)).size} brands • {new Set(results.map((r) => r.market)).size} markets
+              {displayedResults.length} results found across {new Set(displayedResults.map((r) => r.brand)).size} brands • {new Set(displayedResults.map((r) => r.market)).size} markets
             </div>
-            {results.map((result, i) => (
+            {displayedResults.map((result, i) => (
               <div
                 key={i}
                 className="bg-[var(--bg2)] border border-[var(--border)] rounded-[8px] p-4 hover:border-[rgba(200,169,110,0.3)] transition-colors"
@@ -443,10 +535,15 @@ export default function HelpCenterDemoPage() {
                     {result.type}
                   </span>
                 </div>
-                <h3 className="text-[14px] font-medium text-[var(--text)] mb-1">{result.title}</h3>
-                <p className="text-[12px] text-[var(--muted)] leading-[1.6]">{result.snippet}</p>
+                <h3 className="text-[14px] font-medium text-[var(--text)] mb-1">{highlightText(result.title, query)}</h3>
+                <p className="text-[12px] text-[var(--muted)] leading-[1.6]">{highlightText(result.snippet, query)}</p>
               </div>
             ))}
+            {displayedResults.length === 0 && (
+              <div className="text-center py-8 text-[12px] text-[var(--muted)]">
+                No {activeFilter.toLowerCase()} for this query.
+              </div>
+            )}
           </div>
         )}
 

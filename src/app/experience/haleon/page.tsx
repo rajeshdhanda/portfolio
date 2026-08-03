@@ -45,41 +45,54 @@ export default function HaleonExperience() {
             </a>
           </div>
           <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
-            AI search solution across 15+ brand help centers, providing search results from 400+ brand websites and knowledge articles spanning multiple countries, markets, domains, and languages, enabling consumers and healthcare professionals to resolve queries independently, reducing cost and reliance on human agents.
+            AI search solution across 15+ brand help centers, serving grounded answers and search results from 400+ brand websites and knowledge articles spanning multiple countries, markets, domains, and languages, enabling consumers and healthcare professionals to resolve queries independently, reducing cost and reliance on human agents. The experience feels familiar — an AI answer sits above the search results like a Google AI Overview, and it types out live, word by word, like ChatGPT.
           </p>
           <ul className="space-y-2.5">
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Large-scale web crawling from 400+ brand websites across multiple countries, markets, domains, and languages. Automated scraping using Scrapy, structure-aware information extraction from leaflets using Azure AI Document Intelligence, data ingestion to Azure Blob Storage, and updating vector and keyword indexes in Azure AI Search for real-time, high-relevance retrieval and RAG-ready content delivery.
+              Built an automated pipeline that keeps content fresh — crawling brand websites, refreshing what changed, and removing outdated pages before each update.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Providing robust search, autocomplete, and suggestion APIs from Azure AI Search directly to the frontend team for seamless integration.
+              Processed content from web pages and product leaflets, cleaned it up, and made it searchable through a combination of keyword and meaning-based search.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              AI Agent provides streaming responses along with search results — similar to a ChatGPT experience — and captures user feedback through thumbs up and thumbs down.
+              Delivered fast search with autocomplete and suggestions, plus an AI assistant that answers questions using only trusted brand content and streams the response in real time.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              LLM-as-a-Judge evaluation framework with multiple judges evaluating answers across different scenarios — disclaimer compliance, groundedness, response consistency, and relevance — ensuring quality and safety of generated responses.
+              Added automated quality checks that continuously score answers for accuracy, safety, and brand compliance across both test cases and real traffic.
             </li>
           </ul>
         </div>
 
         <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-6">
-          <h3 className="text-[15px] font-medium text-[var(--accent)] mb-3">Procurement Contract Intelligence</h3>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-[15px] font-medium text-[var(--accent)]">Procurement Contract Intelligence</h3>
+            <a
+              href={getAssetPath('/experience/haleon/contract-ai-demo')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
+            >
+              View Demo ↗
+            </a>
+          </div>
           <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
-            AI-powered, RAG-based (Agentic-RAG) contract intelligence platform that analyzed 11,000+ Contract IDs and 30,000+ contracts covering ~$7B third-party spend.
+            AI assistant that lets procurement and business teams ask questions in plain English across 11,000+ Contract IDs and 30,000+ contracts covering ~$7B third-party spend — replacing hours of manual contract review.
           </p>
           <ul className="space-y-2.5">
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Productionized modular workflows with Databricks Asset Bundles, integrating Azure Document Intelligence, Unity Catalog, and model serving endpoints along with automated deployment of Databricks App.
+              Chat-based assistant that answers questions about contracts — from quick counts and lists (&quot;how many contracts expire in 2026&quot;) to specific clause wording like payment, termination, or auto-renewal terms.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Built CI/CD pipelines with GitHub Actions for automated, rollback-ready workflows, deployments, and GitOps-based orchestration.
+              A true agentic system — for each question the assistant reasons about what&apos;s being asked, decides which sources to check, digs deeper when the first pass looks thin, and combines the evidence into one grounded answer with follow-up question suggestions.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Agentic RAG with access to multiple tools — vector search index, SQL Toolkit, and custom Python functions working as tools for the main AI Agent — enabling deep research across contracts.
+              Two ways to work: a fast chat mode for everyday questions, and a Deep Research mode that plans the angles worth investigating, sends out specialised agents to study many contracts in parallel, and compiles everything into a structured, downloadable report.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Enabled faster contract review with deep research functionality, improved compliance visibility, and measurable time-cost savings across procurement and business teams.
+              Answers stream in live with visible progress (&quot;understanding your query&quot;, &quot;searching contract documents&quot;), and users can narrow the scope with filters for category, supplier, or a specific contract.
+            </li>
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
+              Delivered faster contract review, clearer compliance visibility, and measurable time and cost savings across procurement and business teams.
             </li>
           </ul>
         </div>
