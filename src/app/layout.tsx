@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Mono } from "next/font/google";
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-body" });
-const dmSerif = DM_Serif_Display({ weight: "400", subsets: ["latin"], variable: "--font-display" });
-const dmMono = DM_Mono({ weight: ["400", "500"], subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "Rajesh Dhanda — Senior Machine Learning Engineer",
@@ -18,22 +12,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const themeScript = `
-    (function() {
-      try {
-        var stored = localStorage.getItem('theme');
-        var theme = stored || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  `;
-
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSerif.variable} ${dmMono.variable}`}>
+    <html lang="en">
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={`${outfit.className} antialiased`}>
+      <body>
         <Navbar />
         {children}
       </body>

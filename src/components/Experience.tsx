@@ -9,7 +9,7 @@ export default function Experience() {
       summary: 'Led MLOps & Agentic-RAG foundations for DS and GenAI services on Azure & Databricks across multiple product teams.',
       bullets: [
         'Global Consumer Help Center: AI search across 15+ brand help centers from 400+ brand websites spanning multiple countries, markets & languages — reducing cost and reliance on human agents',
-        'Procurement Contract Intelligence: AI-powered platform analyzing 11,000+ Contract IDs & 30,000+ contracts covering $7B third-party spend — enabling faster review, compliance visibility & time-cost savings',
+        'Procurement Contract Intelligence: AI-powered platform analyzing 11,000+ Contract IDs covering $7B third-party spend — enabling faster review, compliance visibility & time-cost savings',
         'Commercial Tech: MLOps framework for Marketing Mix Models, scalable, repeatable modeling of brand, market–level sales drivers - used to optimize global marketing spend',
         'MLOps and Agentic-RAG Foundation: Framework with code & detailed docs, used across Help Center, Contract AI, NRM, NBA, QSC and Commercial Tech projects',
       ],
