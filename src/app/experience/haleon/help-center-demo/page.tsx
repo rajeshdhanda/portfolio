@@ -356,6 +356,49 @@ export default function HelpCenterDemoPage() {
           </p>
         </div>
 
+        {/* Live Production Examples */}
+        <div className="mb-10 bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="relative flex w-1.5 h-1.5">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--accent2)] opacity-75 animate-ping" />
+              <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-[var(--accent2)]" />
+            </span>
+            <span className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--accent2)]">
+              Live in Production
+            </span>
+          </div>
+          <p className="text-[12px] text-[var(--muted)] leading-[1.7] mb-4">
+            Live brand help centers built on this platform. These are reference examples — the full system powers many more brands across Haleon.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Sensodyne', url: 'https://help.sensodyne.com/en-us' },
+              { label: 'Haleon Help', url: 'https://haleon.help/en-us' },
+              { label: 'Centrum', url: 'https://help.centrum.com/en-us' },
+              { label: 'Advil', url: 'https://help.advil.com/en-us' },
+              { label: 'Parodontax', url: 'https://help.parodontax.com/en-us' },
+              { label: 'Polident', url: 'https://help.polident.com/en-us' },
+              { label: 'Tums', url: 'https://help.tums.com/en-us' },
+            ].map((site) => (
+              <a
+                key={site.url}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-[11px] text-[var(--text)] bg-[var(--bg)] border border-[var(--border)] px-3 py-1.5 rounded hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent2)]" />
+                {site.label}
+                <svg width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14 21 3" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Search Bar */}
         <div className="relative mb-8">
           <div className="flex items-center bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] overflow-hidden focus-within:border-[var(--accent)] transition-colors">
