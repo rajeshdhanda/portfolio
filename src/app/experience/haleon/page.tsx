@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { getAssetPath } from '../../../utils/assets'
-import AwardsRecognition from '../../../components/AwardsRecognition'
 
 export default function HaleonExperience() {
   return (
@@ -27,22 +26,27 @@ export default function HaleonExperience() {
         </p>
       </div>
 
-      {/* Awards & Recognition */}
-      <AwardsRecognition />
-
       {/* Projects */}
       <div className="space-y-6">
         <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-6">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col items-start gap-3 mb-3 sm:flex-row sm:items-center sm:justify-between">
             <h3 className="text-[15px] font-medium text-[var(--accent)]">Global Consumer Help Center</h3>
-            <a
-              href={getAssetPath('/experience/haleon/help-center-demo')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
-            >
-              View Demo ↗
-            </a>
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href={getAssetPath('/experience/haleon/help-center-demo')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
+              >
+                View Demo ↗
+              </a>
+              <a
+                href={getAssetPath('/recognition#help-center')}
+                className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
+              >
+                What Leadership Says ↗
+              </a>
+            </div>
           </div>
           <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
             AI search solution across 15+ brand help centers, serving grounded answers and search results from 400+ brand websites and knowledge articles spanning 90 countries, markets, domains, and languages, enabling consumers and healthcare professionals to resolve queries independently. The experience feels familiar — an AI answer sits above the search results like a Google AI Overview, and it types out live, word by word, like ChatGPT.
@@ -67,16 +71,24 @@ export default function HaleonExperience() {
         </div>
 
         <div className="bg-[var(--bg2)] border border-[var(--border)] rounded-[10px] p-6">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col items-start gap-3 mb-3 sm:flex-row sm:items-center sm:justify-between">
             <h3 className="text-[15px] font-medium text-[var(--accent)]">Procurement Contract Intelligence</h3>
-            <a
-              href={getAssetPath('/experience/haleon/contract-ai-demo')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
-            >
-              View Demo ↗
-            </a>
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href={getAssetPath('/experience/haleon/contract-ai-demo')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
+              >
+                View Demo ↗
+              </a>
+              <a
+                href={getAssetPath('/recognition#contract-ai')}
+                className="font-[family-name:var(--font-mono)] text-[11px] text-[var(--accent)] bg-[rgba(200,169,110,0.1)] border border-[rgba(200,169,110,0.35)] px-3.5 py-1.5 rounded hover:bg-[rgba(200,169,110,0.18)] transition-colors font-medium"
+              >
+                What Leadership Says ↗
+              </a>
+            </div>
           </div>
           <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
             AI assistant that lets procurement and business teams ask questions in plain English across 11,000+ Contract IDs and 30,000+ contracts covering ~$7B third-party spend — replacing hours of manual contract review.

@@ -140,6 +140,30 @@
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 
+.recognition-card { scroll-margin-top: 96px; }
+.recognition-card:target { animation: recognition-highlight 5s ease-out; }
+
+@keyframes recognition-highlight {
+  0%, 75% {
+    background-color: #f0f0f0;
+    border-color: #151515;
+    box-shadow: 0 0 0 4px rgba(21, 21, 21, 0.1);
+  }
+  100% {
+    background-color: var(--bg2);
+    border-color: var(--border);
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recognition-card:target {
+    animation: none;
+    background-color: #f0f0f0;
+    border-color: #151515;
+  }
+}
+
 /* Print: keep the homepage layout and compress it so it fits one page (choose A3) */
 @media print {
   @page { margin: 10mm; }
