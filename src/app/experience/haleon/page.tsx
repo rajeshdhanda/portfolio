@@ -45,20 +45,23 @@ export default function HaleonExperience() {
             </a>
           </div>
           <p className="text-[13px] text-[var(--text-soft)] leading-[1.7] mb-4">
-            AI search solution across 15+ brand help centers, serving grounded answers and search results from 400+ brand websites and knowledge articles spanning multiple countries, markets, domains, and languages, enabling consumers and healthcare professionals to resolve queries independently, reducing cost and reliance on human agents. The experience feels familiar — an AI answer sits above the search results like a Google AI Overview, and it types out live, word by word, like ChatGPT.
+            AI search solution across 15+ brand help centers, serving grounded answers and search results from 400+ brand websites and knowledge articles spanning 90 countries, markets, domains, and languages, enabling consumers and healthcare professionals to resolve queries independently. The experience feels familiar — an AI answer sits above the search results like a Google AI Overview, and it types out live, word by word, like ChatGPT.
           </p>
           <ul className="space-y-2.5">
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Built an automated pipeline that keeps content fresh — crawling brand websites, refreshing what changed, and removing outdated pages before each update.
+              Built an automated pipeline that keeps content across 400+ websites fresh — crawling brand sites and product leaflets, refreshing what changed, removing outdated pages, and making everything searchable through a combination of keyword and meaning-based search.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Processed content from web pages and product leaflets, cleaned it up, and made it searchable through a combination of keyword and meaning-based search.
+              Delivered fast search with autocomplete and suggestions, plus an AI assistant that answers using only trusted brand content and streams responses in real time — making self-service the primary channel over phone and email.
             </li>
             <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Delivered fast search with autocomplete and suggestions, plus an AI assistant that answers questions using only trusted brand content and streams the response in real time.
+              Automated quality checks that continuously score answers for accuracy, safety, and brand compliance across both curated & real traffic, keeping containment high at scale.
             </li>
-            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px]">
-              Added automated quality checks that continuously score answers for accuracy, safety, and brand compliance across both test cases and real traffic.
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px] font-semibold">
+              FY 2025: Drove a 70.1% self-serve containment rate and a 26.6% drop in agent-assisted contacts — cutting cost per interaction by ~95×.
+            </li>
+            <li className="text-[13px] text-[var(--text-soft)] leading-[1.6] pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--accent)] before:text-[11px] font-semibold">
+              Value: quicker, cheaper support — digital serving cost drops sharply when consumers are successfully contained, and scalable, efficient functionality helps support more consumers, more quickly.
             </li>
           </ul>
         </div>
