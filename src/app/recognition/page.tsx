@@ -86,7 +86,7 @@ export default function RecognitionPage() {
 
       {/* Testimonials */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {testimonials.map((t, i) => (
+        {testimonials.map((t) => (
           <div
             key={t.id}
             id={t.id}
