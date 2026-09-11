@@ -9,7 +9,7 @@ const dmSerif = DM_Serif_Display({ weight: "400", subsets: ["latin"], variable: 
 const dmMono = DM_Mono({ weight: ["400", "500"], subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Rajesh Dhanda — Senior Machine Learning Engineer",
+  title: "Rajesh Kumar — Senior Machine Learning Engineer",
   description: "Senior Machine Learning Engineer building scalable ML & LLM platforms at enterprise scale.",
 };
 
