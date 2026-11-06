@@ -50,13 +50,13 @@ const experiences = [
   },
 ]
 
-const skills = [
+/* const skills = [
   { label: 'Frameworks', values: 'LangChain, LangGraph, MLflow, Seldon Core & Kubeflow KServe, Nvidia Triton Inference Server' },
   { label: 'MLOps', values: 'CI/CD, GitHub Actions, Databricks Bundles, MLflow, Unity Catalog, Docker, Kubernetes, Helm, Prometheus, Grafana' },
   { label: 'Cloud · Azure', values: 'OpenAI, AI Search, AI Document Intelligence, Blob Storage, ACR, Web App, AI Foundry' },
   { label: 'Cloud · GCP', values: 'GKE, Cloud Build, Cloud Functions, Cloud Run, Cloud Storage, Pub/Sub, Vertex AI, BigQuery, GCR' },
   { label: 'Cloud · Databricks', values: 'Bundles, Unity Catalog, Model Serving, App, Mosaic AI Gateway, Vector Search, Lakebase Postgres' },
-]
+] */
 
 export default function Home() {
   return (
@@ -111,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SKILLS */}
+      {/* SKILLS
       <section id="skills" className="ed-section" style={{ paddingTop: '48px' }}>
         <div className="wrap">
           <div className="sec-head">
@@ -127,6 +127,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       <footer className="ed-footer" style={{ background: 'var(--cream-deep)' }}>
         <div className="wrap">
